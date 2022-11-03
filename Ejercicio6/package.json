@@ -1,0 +1,19 @@
+{
+  "name": "ejercicio6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc ejemplo.ts && node ejemplo.js",
+    "ejercicio": "tsc ejercicio6.ts && node ejercicio6.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "eslint": "^8.26.0",
+    "typescript": "^4.8.4"
+  }
+}
