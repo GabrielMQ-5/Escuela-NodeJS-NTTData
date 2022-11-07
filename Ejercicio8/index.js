@@ -226,5 +226,4 @@ var CA2 = function () { return __awaiter(_this, void 0, void 0, function () {
         }
     });
 }); };
-// CA1().then(() => CA2());
-CA2();
+CA1().then(function () { return CA2(); });
