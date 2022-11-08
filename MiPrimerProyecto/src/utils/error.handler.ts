@@ -6,4 +6,4 @@ const handleHttp = (response: Response, error: string, errorRaw?: any) => {
   response.send({ error });
 };
 
-export default handleHttp;
+export { handleHttp };

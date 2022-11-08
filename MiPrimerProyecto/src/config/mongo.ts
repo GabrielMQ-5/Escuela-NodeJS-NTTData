@@ -6,8 +6,8 @@ const NODE_ENV = process.env.NODE_ENV;
 async function dbConnect(): Promise<void> {
   const DB_URI = <string>process.env.DB_URI;
   await connect(DB_URI)
-    .then(() => console.log("CORRECT DB"))
-    .catch(() => console.log("DB FAILED"));
+    .then(() => console.log("DB connection succesful."))
+    .catch(() => console.log("DB connection failed."));
 }
 
 export default dbConnect;

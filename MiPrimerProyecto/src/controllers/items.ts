@@ -6,7 +6,7 @@ import {
   updateCar,
   deleteCar,
 } from "../services/item";
-import handleHttp from "../utils/error.handler";
+import { handleHttp } from "../utils/error.handler";
 
 const getItem = async ({ params }: Request, res: Response) => {
   try {

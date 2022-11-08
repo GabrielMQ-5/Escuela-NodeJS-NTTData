@@ -14,4 +14,4 @@ const verifyToken = (jwt: string) => {
   return isVerified;
 };
 
-export { generateToken };
+export { generateToken, verifyToken };
