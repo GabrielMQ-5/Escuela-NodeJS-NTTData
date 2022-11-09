@@ -15,7 +15,7 @@ const getItem = async ({ params }: Request, res: Response) => {
     const data = response ? response : "NOT_FOUND";
     res.send(data);
   } catch (e) {
-    handleHttp(res, "ERROR_GET_ITEM", e);
+    handleHttp(res, "ERROR_GET_ITEM", e as object);
   }
 };
 
