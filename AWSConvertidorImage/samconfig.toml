@@ -1,0 +1,13 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "labimage"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1xuglb9q5mcv8"
+s3_prefix = "labimage"
+region = "us-east-2"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+parameter_overrides = "SourceBucketName=\"sourcebucketlab3\" DestinationBucketName=\"destinationbucketlab3\""
+image_repositories = []

@@ -1,0 +1,83 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: "AWS::Serverless-2016-10-31"
+
+Resources:
+  GetProductsFunction:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      Handler: getHandler
+      Runtime: nodejs18.x
+      CodeUri: ./productos
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ProductTable
+      Environment:
+        Variables:
+          PRODUCTS_TABLE: !Ref ProductTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /productos
+            Method: GET
+  AddProductFunction:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      Handler: putHandler
+      Runtime: nodejs18.x
+      CodeUri: ./productos
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ProductTable
+      Environment:
+        Variables:
+          PRODUCTS_TABLE: !Ref ProductTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /productos
+            Method: POST
+  UpdateProductFunction:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      Handler: updateHandler
+      Runtime: nodejs18.x
+      CodeUri: ./productos
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ProductTable
+      Environment:
+        Variables:
+          PRODUCTS_TABLE: !Ref ProductTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /productos
+            Method: PUT
+  DeleteProductFunction:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      Handler: deleteHandler
+      Runtime: nodejs18.x
+      CodeUri: ./productos
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ProductTable
+      Environment:
+        Variables:
+          PRODUCTS_TABLE: !Ref ProductTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /productos
+            Method: DELETE
+
+  ProductTable:
+    Type: AWS::Serverless::SimpleTable
+#Outputs:
+#  MyApi:
+#   Description: "URL"
+#   V
